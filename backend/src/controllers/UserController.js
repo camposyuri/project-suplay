@@ -55,4 +55,16 @@ module.exports = {
       console.log(error);
     }
   },
+
+  async deleteUser(request, response) {
+    try {
+      const { id } = request.params;
+
+      await knex("users").where({ id }).del();
+
+      return response.send();
+    } catch (error) {
+      console.log(error);
+    }
+  },
 };

@@ -1,4 +1,3 @@
-const { update } = require("../database");
 const knex = require("../database");
 
 module.exports = {
@@ -15,7 +14,7 @@ module.exports = {
 
       return response.json(results);
     } catch (error) {
-      console.log(error);
+      next(error);
     }
   },
 
@@ -32,7 +31,7 @@ module.exports = {
 
       return response.status(201).send();
     } catch (error) {
-      console.log(error);
+      next(error);
     }
   },
 
@@ -52,7 +51,7 @@ module.exports = {
 
       return response.send();
     } catch (error) {
-      console.log(error);
+      next(error);
     }
   },
 
@@ -64,7 +63,7 @@ module.exports = {
 
       return response.send();
     } catch (error) {
-      console.log(error);
+      next(error);
     }
   },
 };

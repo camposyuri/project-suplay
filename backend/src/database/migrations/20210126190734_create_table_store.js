@@ -10,7 +10,7 @@ exports.up = (knex) => {
     table
       .integer("user_id")
       .references("users.id")
-      .notNullable()
+      .notNull()
       .onDelete("CASCADE");
   });
 };

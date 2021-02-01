@@ -12,5 +12,8 @@ routes
   .put("/users/:id", UserController.updateUser)
   .delete("/users/:id", UserController.deleteUser)
   // Store
-  .get("/store", StoreController.getStore);
+  .get("/store", StoreController.getStoreJoin)
+  .post("/store", StoreController.createStore)
+  .put("/store/:id", StoreController.updateStore)
+  .delete("/store/:id", StoreController.removeStore);
 module.exports = routes;
